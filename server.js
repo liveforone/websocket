@@ -1,4 +1,16 @@
 // <server.js> //
+/*
+1. 접속자 1이 메세지를 전송하면 브라우저에서 'send message' 
+event를 메세지와 함께 서버로 전달함
+2. 서버에서 'send message' event listener에서 
+event를 감지하고 메세지를 전달받음
+3. 서버의 'send message' event listener가 'receive message' 
+event를 메세지와 함께 접속중인 모든 클라이언트에게 보냄
+4. 접속중인 모든 클라이언트의 'receive message' 
+event listener가 event를 감지하고 메세지를 전달받음
+5. 클라이언트들의 'receive message' event listener가 
+메세지를 화면에 표시함
+*/
 //==dependencies==//
 const express = require('express');
 const app = express();
